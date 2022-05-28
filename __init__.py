@@ -1,9 +1,7 @@
-import webbrowser
-
 import bpy
 
 bl_info = {
-    "name": "OpenURL",
+    "name": "OpenVSCode",
     "author": "tsutomu",
     "version": (0, 1),
     "blender": (3, 1, 0),
@@ -12,35 +10,31 @@ bl_info = {
     "description": "",
     "location": "View3D > Object",
     "warning": "",
-    "doc_url": "https://github.com/SaitoTsutomu/OpenURL",
+    "doc_url": "https://github.com/SaitoTsutomu/OpenVSCode",
 }
 
 
-class COU_OT_open_url(bpy.types.Operator):
-    bl_idname = "object.open_url"
-    bl_label = "Open URL"
-    bl_description = "Open the URL of a text object."
+class COC_OT_open_vscode(bpy.types.Operator):
+    bl_idname = "object.open_vscode"
+    bl_label = "Open VSCode"
+    bl_description = "Open the file of bpy.data.texts."
 
     def execute(self, context):
-        obj = context.view_layer.objects.active
-        if obj and obj.type == "FONT" and obj.data.body.startswith("http"):
-            webbrowser.open(obj.data.body)
+        from datetime import datetime
+
+        print(datetime.now())
         return {"FINISHED"}
 
 
 def draw_item(self, context):
-    self.layout.operator(COU_OT_open_url.bl_idname)
+    self.layout.operator(COC_OT_open_vscode.bl_idname)
 
 
 def register():
-    bpy.utils.register_class(COU_OT_open_url)
+    bpy.utils.register_class(COC_OT_open_vscode)
     bpy.types.VIEW3D_MT_object.append(draw_item)
 
 
 def unregister():
-    bpy.utils.unregister_class(COU_OT_open_url)
+    bpy.utils.unregister_class(COC_OT_open_vscode)
     bpy.types.VIEW3D_MT_object.remove(draw_item)
-
-
-if __name__ == "__main__":
-    register()
