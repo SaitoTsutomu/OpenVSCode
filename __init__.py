@@ -1,3 +1,5 @@
+from subprocess import run
+
 import bpy
 
 bl_info = {
@@ -20,9 +22,9 @@ class COC_OT_open_vscode(bpy.types.Operator):
     bl_description = "Open the file of bpy.data.texts."
 
     def execute(self, context):
-        from datetime import datetime
-
-        print(datetime.now())
+        for text in bpy.data.texts:
+            if s := text.filepath:
+                run(["code", s])
         return {"FINISHED"}
 
 
@@ -32,9 +34,9 @@ def draw_item(self, context):
 
 def register():
     bpy.utils.register_class(COC_OT_open_vscode)
-    bpy.types.VIEW3D_MT_object.append(draw_item)
+    bpy.types.TEXT_MT_text.append(draw_item)
 
 
 def unregister():
     bpy.utils.unregister_class(COC_OT_open_vscode)
-    bpy.types.VIEW3D_MT_object.remove(draw_item)
+    bpy.types.TEXT_MT_text.remove(draw_item)

@@ -1,6 +1,6 @@
 ## Blender Add-on: OpenVSCode
 
-Open the URL of a text object.
+Open with VSCode for bpy.data.texts.
 
 ## Installation
 
@@ -14,5 +14,4 @@ Open the URL of a text object.
 
 ## Usage
 
-- Select a text.
-- Select the Object Menu -> Open URL.
+- Select the Text Menu -> Open VSCode.
