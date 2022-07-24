@@ -53,8 +53,8 @@ ui_classes = (
 
 
 def draw_item(self, context):
-    self.layout.operator(COU_OT_open_url.bl_idname)
-    self.layout.operator(COU_OT_add_url.bl_idname)
+    for ui_class in ui_classes:
+        self.layout.operator(ui_class.bl_idname)
 
 
 def register():
