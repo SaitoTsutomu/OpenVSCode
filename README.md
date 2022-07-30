@@ -1,6 +1,7 @@
 ## Blender Add-on: OpenURL
 
-Open the URL of a text object.
+Add a text object of URL from the clipboard.
+And, open the URL of a text object.
 
 ## Installation
 
@@ -13,6 +14,9 @@ Open the URL of a text object.
   - Check the "Object: OpenURL".
 
 ## Usage
+
+- Copy URL.
+- Select the Object Menu -> Add URL.
 
 - Select a text.
 - Select the Object Menu -> Open URL.
