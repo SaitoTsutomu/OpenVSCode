@@ -35,17 +35,21 @@ class COU_OT_add_url(bpy.types.Operator):
         return {"FINISHED"}
 
 
+# 自動的にこのモジュールのクラスを設定
 ui_classes = _get_cls(__name__)
 
 
 def draw_item(self, context):
+    """メニューの登録と削除用"""
     for ui_class in ui_classes:
         self.layout.operator(ui_class.bl_idname)
 
 
 def register():
+    """追加登録用（クラス登録は、register_class内で実行）"""
     bpy.types.VIEW3D_MT_object.append(draw_item)
 
 
 def unregister():
+    """追加削除用（クラス削除は、register_class内で実行）"""
     bpy.types.VIEW3D_MT_object.remove(draw_item)
