@@ -1,3 +1,5 @@
+from .register_class import register, ui_classes, unregister  # noqa: F401
+
 bl_info = {
     "name": "OpenURL",
     "author": "tsutomu",
