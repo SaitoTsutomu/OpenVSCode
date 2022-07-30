@@ -5,8 +5,8 @@ import bpy
 from .register_class import _get_cls
 
 
-class COU_OT_open_url(bpy.types.Operator):
-    bl_idname = "object.open_url"
+class COC_OT_open_vscode(bpy.types.Operator):
+    bl_idname = "object.open_vscode"
     bl_label = "Open URL"
     bl_description = "Open the URL of a text object."
 
@@ -47,9 +47,9 @@ def draw_item(self, context):
 
 def register():
     """追加登録用（クラス登録は、register_class内で実行）"""
-    bpy.types.VIEW3D_MT_object.append(draw_item)
+    bpy.types.TEXT_MT_text.append(draw_item)
 
 
 def unregister():
     """追加削除用（クラス削除は、register_class内で実行）"""
-    bpy.types.VIEW3D_MT_object.remove(draw_item)
+    bpy.types.TEXT_MT_text.remove(draw_item)

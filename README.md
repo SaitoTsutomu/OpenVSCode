@@ -1,22 +1,17 @@
-## Blender Add-on: OpenURL
+## Blender Add-on: OpenVSCode
 
-Add a text object of URL from the clipboard.
-And, open the URL of a text object.
+Open with VSCode for `bpy.data.texts`.
 
 ## Installation
 
-- Download https://github.com/SaitoTsutomu/OpenURL/archive/refs/heads/master.zip
+- Download https://github.com/SaitoTsutomu/OpenVSCode/archive/refs/heads/master.zip
 - Start Blender.
 - Edit menu -> Preferences
   - Select the "Add-ons" tab.
   - Press the "Install ...".
   - Select the downloaded ZIP file and press the button "Install Add-on".
-  - Check the "Object: OpenURL".
+  - Check the "Object: OpenVSCode".
 
 ## Usage
 
-- Copy URL.
-- Select the Object Menu -> Add URL.
-
-- Select a text.
-- Select the Object Menu -> Open URL.
+- Select the Text Menu -> Open VSCode.
